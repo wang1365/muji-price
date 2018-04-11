@@ -1,6 +1,6 @@
 
 var myComponet = {
-  template: '<div>A custom component!</div>'
+  template: '<h2>中日MUJI网站商品价格比较 作者：王晓川</h2>'
 };
 
 function convertToCnUrl(s) {
@@ -20,7 +20,9 @@ var app = new Vue({
   data: {
     author: 'wangxiaochuan',
     urlJp: 'https://www.muji.net/store/cmdty/detail/4549738797371',
-    urlCn: ''
+    urlCn: '',
+    priceJp:'100',
+    priceChangeUrl:'https://zh.coinmill.com/CNY_JPY.html'
   },
   components: {
     'my-component': myComponet
@@ -38,8 +40,10 @@ var app = new Vue({
         this.urlJp = url;
       }
     },
-    frameJpClick: function() {
-      alert(parent.document.getElementById("iframeJp").contentWindow.location.href)
+    getCnPriceUrl: function () {
+      price = this.priceJp.replace(',', '').trim();
+      this.priceChangeUrl = 'https://zh.coinmill.com/CNY_JPY.html#JPY=' + price;
+      window.open(this.priceChangeUrl);
     }
   }
 })

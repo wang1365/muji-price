@@ -1,23 +1,30 @@
 <html>
 
 <body>
-
+	<head>
+		<title>我的MUJI</title>
+	</head>
 	<div id="app">
 		<my-component></my-component>
-		{{ author }}
 		<div class="url">
 			<label>商品地址（日本）:</label>
 			<input style="width: 600px" type="text" v-model="urlJp"/><button v-on:click="jpToCn">根据日本商品搜索中国商品</button><br>
+
 			<label>商品地址（中国）:</label>
-			<input style="width: 600px" type="text" v-model="urlCn"/><button v-on:click="cnToJp">根据中国商品搜索日本商品</button><br><br>
+			<input style="width: 600px" type="text" v-model="urlCn"/><button v-on:click="cnToJp">根据中国商品搜索日本商品</button><br>
+
+			<label>日元换算人民币：</label>
+			<input type="text" v-model="priceJp"/><button v-on:click="getCnPriceUrl">计算></button><br>
 		</div>
-		<iframe id="iframeJp" style="width: 800;height: 600px" name="muji_jp" v-bind:src="urlJp" v-on:click="frameJpClick">
-	</iframe>
-	<iframe id="iframeCn" style="width: 800;height: 600px" name="muji_cn" v-bind:src="urlCn">
-	</iframe>
+
+		<iframe id="iframeJp" style="width: 800;height: 700" name="muji_jp" v-bind:src="urlJp"></iframe>
+		<iframe id="iframeCn" style="width: 800;height: 700" name="muji_cn" v-bind:src="urlCn"></iframe><br>
 	</div>
+
+
 	<script type="text/javascript" src="./node_modules/vue/dist/vue.min.js"></script>
 	<script type="text/javascript" src="./node_modules/iview/dist/iview.min.js"></script>
+	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="./src/app.js"></script>
 </body>
 
