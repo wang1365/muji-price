@@ -1,0 +1,22 @@
+{
+  "name": "muji-price",
+  "version": "1.0.0",
+  "description": "Price comparision between cn and jp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wang1365/muji-price.git"
+  },
+  "author": "wangxiaochuan01@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wang1365/muji-price/issues"
+  },
+  "homepage": "https://github.com/wang1365/muji-price#readme",
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
